@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/show_bookings")
 def show_bookings():
-    bookings = mongo.db.bookings.find()
+    bookings = list(mongo.db.bookings.find())
     return render_template("bookings.html", bookings=bookings)
 
 
