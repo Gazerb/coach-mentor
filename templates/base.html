@@ -17,6 +17,7 @@
 </head>
 
 <body>
+  <!-- Navbar  -->
   <nav class="nav-extended">
     <div class="nav-wrapper blue">
       <a href="#!" class="brand-logo">Clitheroe Wolves Mentors</a>
@@ -33,6 +34,7 @@
     </div>
   </nav>
 
+  <!-- Mobile Navbar -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="">Home</a></li>
     <li><a href="{{ url_for('show_bookings') }}">Bookings</a></li>
@@ -43,8 +45,23 @@
     <li><a href="#">Register</a></li>
   </ul>
 
-  {% block content %}
-  {% endblock %}
+  <section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="row flashes">
+                    <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</section>
+
+  <main class="container">
+    {% block content %}
+    {% endblock %}
+  </main>
 
   <footer class="page-footer blue">
     <div class="container">
