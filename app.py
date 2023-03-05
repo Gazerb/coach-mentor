@@ -34,6 +34,13 @@ def show_bookings():
     return render_template("bookings.html", bookings=bookings)
 
 
+@app.route("/show_mentors")
+def show_mentors():
+    mentors = list(mongo.db.mentors.find())
+    print(mentors)
+    return render_template("mentors.html", mentors=mentors)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

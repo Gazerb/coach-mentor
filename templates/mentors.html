@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Club Mentors</h2>
+    {% for mentors in mentors %}
+        {{ mentors.first_name }}<br>
+        {{ mentors.last_name }}<br>
+        {{ mentors.coaching_age_range }}<br>
+        {{ mentors.coaching_years }}<br>
+    {% endfor %}
+    {% endblock %}
