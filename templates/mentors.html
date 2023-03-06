@@ -2,9 +2,19 @@
 {% block content %}
     <h2>Club Mentors</h2>
     {% for mentors in mentors %}
-        {{ mentors.first_name }}<br>
-        {{ mentors.last_name }}<br>
-        {{ mentors.coaching_age_range }}<br>
-        {{ mentors.coaching_years }}<br>
+        <div class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="images/sample-1.jpg">
+                </div>
+                <div class="card-content">
+                  <h3>{{ mentors.first_name }} {{ mentors.last_name }}</h3>
+                  <p>Age group they coach: {{ mentors.coaching_age_range}}</p>
+                  <p>Years of coaching: {{ mentors.coaching_years }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
     {% endfor %}
     {% endblock %}

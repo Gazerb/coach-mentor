@@ -2,8 +2,19 @@
 {% block content %}
     <h2>Book a Mentor</h2>
     {% for bookings in bookings %}
-        {{ bookings.name }}<br>
-        {{ bookings.date }}<br>
-        {{ bookings.time }}<br>
+        <div class="row">
+            <div class="col s12 m6">
+              <div class="card green">
+                <div class="card-content white-text">
+                  <span class="card-title">{{ bookings.name }}</span>
+                  <p>{{ bookings.date }}</p>
+                  <p>{{ bookings.time }}</p>
+                </div>
+                <div class="card-action">
+                  <button>Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
     {% endfor %}
-    {% endblock %}
+{% endblock %}
