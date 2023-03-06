@@ -24,11 +24,15 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="{{ url_for('hello') }}">Home</a></li>
-        <li><a href="{{ url_for('show_bookings') }}">Bookings</a></li>
-        <li><a href="{{ url_for('show_mentors') }}">Mentors</a></li>
-        <li><a href="#">Log Out</a></li>
-        <li><a href="{{ url_for('login') }}">Log In</a></li>
-        <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% if session.user %}
+          <li><a href="{{ url_for('show_bookings') }}">Bookings</a></li>
+          <li><a href="{{ url_for('show_mentors') }}">Mentors</a></li>
+          <li><a href="{{ url_for('profile') }}">Profile</a></li>
+          <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}">Log In</a></li>
+          <li><a href="{{ url_for('register') }}">Register</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>
@@ -66,16 +70,17 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <h5 class="white-text">Clitheroe Wolves FC</h5>
+          <p class="grey-text text-lighten-4"><strong>Email:</strong>clitheroewolesfc@gmail.com</p>
+          <p class="grey-text text-lighten-4"><strong>Phone:</strong>01200 998456</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Other Coaching Resources</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Clitheroe Wolves FC</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://clitheroewolvesfc.co.uk/" target="_blank">Clitheroe Wolves FC</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://learn.englandfootball.com/sessions" target="_blank">FA Learning</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.soccerxpert.com/" target="_blank">soccerxpert</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.sportsessionplanner.com/" target="_blank">Session Planner</a></li>
           </ul>
         </div>
       </div>
