@@ -52,7 +52,12 @@ def register():
 
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "contact_number": request.form.get("contact_number"),
+            "team": request.form.get("team")
         }
         mongo.db.users.insert_one(register)
 
@@ -111,6 +116,11 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/make_a_booking")
+def make_a_booking():
+    return render_template("make_a_booking.html")
 
 
 if __name__ == "__main__":
