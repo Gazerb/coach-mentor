@@ -1,57 +1,60 @@
 {% extends "base.html" %}
 {% block content %}
-<h2 class="center-text">Make a booking</h2>
-    <div class="row">
-      <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
-              <div class="row">
-                  <div class="input-field col s6">
-                    <input placeholder="First Name" id="first_name" name="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input placeholder="Last Name" id="last_name" name="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" name="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="Contact Number" id="contact_number" name="contact_number" type="text" class="validate">
-                    <label for="contact_number">Contact Number</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input placeholder="Team" id="team" name="team" type="text" class="validate">
-                    <label for="team">Team You Coach</label>
-                  </div>
-                <div class="row">
-                  <div>
-                  <input type="text" class="datepicker">
-                </div>
-                </div>
-                <div class="input-field col s12">
+<h2 class="center-text padding">Make a booking</h2>
+<div class="row card-panel blue lighten-5">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="First Name" id="first_name" name="first_name" type="text" class="validate" required>
+                <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Last Name" id="last_name" name="last_name" type="text" class="validate" required>
+                <label for="last_name">Last Name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" name="email" type="email" class="validate" required>
+                <label for="email">Email</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Contact Number" id="contact_number" name="contact_number" type="text"
+                    class="validate" required>
+                <label for="contact_number">Contact Number</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input placeholder="Team" id="team" name="team" type="text" class="validate">
+                <label for="team">Team You Coach</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="date" name="date" type="text" class="datepicker validate" required>
+                <label for="date">Choose your date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
                     <select>
-                      <option value="" disabled selected>Choose your option</option>
-                      <option value="1">Option 1</option>
-                      <option value="2">Option 2</option>
-                      <option value="3">Option 3</option>
-                    </select>
-                    <label>Materialize Select</label>
-                  </div>
-                </div>
-              <!-- register -->
-              <div class="row">
-                  <button type="submit" class="col s12 btn-large button">
-                      Book <i class="fas fa-calendar-days"></i>
-                  </button>
-              </div>
-      </form>
-    </div>
+                    <option value="" disabled selected>Reason for your booking</option>
+                    <option value="1">Help with Training</option>
+                    <option value="2">Advice</option>
+                    <option value="3">Match Day Support</option>
+                </select>
+            </div>
+        </div>
+        <!-- register -->
+        <div class="row">
+            <button type="submit" class="col s12 btn-large button">
+                Book <i class="fas fa-calendar-days"></i>
+            </button>
+        </div>
+    </form>
+</div>
 
 {% endblock %}
