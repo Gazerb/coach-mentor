@@ -118,8 +118,23 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/make_a_booking")
+@app.route("/make_a_booking", methods=["GET", "POST"])
 def make_a_booking():
+    if request.method == "POST":
+        booking = {
+            "first_name": request.form.get("fist_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "contact_number": request.form.get("contact_number"),
+            "team": request.form.get("team"),
+            "date": request.form.get("date"),
+            "booking_reason": request.form.get("booking_reason"),
+            "created_by": session["user"]
+        }
+        mongo.db.bookings.insert_one(booking)
+        flash("Booking completed, A mentor will be in touch")
+        return redirect(url_for("make_a_booking"))
+
     return render_template("make_a_booking.html")
 
 

@@ -2,7 +2,7 @@
 {% block content %}
 <h2 class="center-text padding">Make a booking</h2>
 <div class="row card-panel blue lighten-5">
-    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('make_a_booking') }}">
         <div class="row">
             <div class="input-field col s6">
                 <input placeholder="First Name" id="first_name" name="first_name" type="text" class="validate" required>
@@ -40,8 +40,9 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                    <select>
-                    <option value="" disabled selected>Reason for your booking</option>
+                    <select id="booking_reason" name="booking_reason">
+                    <label for="booking_reason">Reason for booking</label>
+                    <option value="" disabled selected>Choose the reason for your booking</option>
                     <option value="1">Help with Training</option>
                     <option value="2">Advice</option>
                     <option value="3">Match Day Support</option>
