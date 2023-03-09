@@ -7,10 +7,12 @@
               <div class="card blue">
                 <div class="card-content white-text">
                   <span class="card-title"><strong>Date: </strong>{{ bookings.date }}</span>
-                  <p><strong>Start Time: </strong>{{ bookings.start_time }}</p>
-                  <p><strong>Finish Time: </strong>{{ bookings.end_time }}</p>
-                  <p><strong>Name: </strong>{{ bookings.name_booked }}</p>
+                  <p><strong>Start Time: </strong>{{ bookings.time }}</p>
+                  <p><strong>Name: </strong>{{ bookings.first_name }} {{ bookings.last_name }}</p>
                   <p><strong>Team Booked: </strong>{{ bookings.team }}</p>
+                  <p><strong>Reason for Booking:</strong> {{ bookings.booking_reason }}</p>
+                  <p><strong>Contact Number:</strong> {{ bookings.contact_number }}</p>
+                  <p><strong>Email:</strong> {{ bookings.email }}</p>
                 </div>
                 <div class="card-action">
                   <button class="button">Book</button>

@@ -122,12 +122,13 @@ def logout():
 def make_a_booking():
     if request.method == "POST":
         booking = {
-            "first_name": request.form.get("fist_name"),
+            "first_name": request.form.get("first_name"),
             "last_name": request.form.get("last_name"),
             "email": request.form.get("email"),
             "contact_number": request.form.get("contact_number"),
             "team": request.form.get("team"),
             "date": request.form.get("date"),
+            "time": request.form.get("time"),
             "booking_reason": request.form.get("booking_reason"),
             "created_by": session["user"]
         }
