@@ -27,12 +27,6 @@ def hello():
     return render_template("index.html")
 
 
-@app.route("/show_bookings")
-def show_bookings():
-    bookings = list(mongo.db.bookings.find())
-    return render_template("bookings.html", bookings=bookings)
-
-
 @app.route("/show_mentors")
 def show_mentors():
     mentors = list(mongo.db.mentors.find())
@@ -108,6 +102,12 @@ def profile():
         return render_template("profile.html", username=current_user)
 
     return redirect(url_for("login"))
+
+
+@app.route("/show_bookings")
+def show_bookings():
+    bookings = list(mongo.db.bookings.find({"created_by": session["user"]}))
+    return render_template("bookings.html", bookings=bookings)
 
 
 @app.route("/logout")
