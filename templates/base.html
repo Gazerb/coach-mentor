@@ -30,7 +30,7 @@
           <li><a href="{{ url_for('make_a_booking') }}">Make a Booking</a></li>
           <li><a href="{{ url_for('show_mentors') }}">Mentors</a></li>
           <li><a href="{{ url_for('profile') }}">Profile</a></li>
-          <li><a href="{{ url_for('show_bookings') }}">Bookings</a></li>
+          <li><a href="{{ url_for('show_bookings') }}">My Bookings</a></li>
           <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         {% else %}
           <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -47,7 +47,7 @@
     <li><a href="{{ url_for('make_a_booking') }}">Make a Booking</a></li>
     <li><a href="{{ url_for('show_mentors') }}">Mentors</a></li>
     <li><a href="{{ url_for('profile') }}">Profile</a></li>
-    <li><a href="{{ url_for('show_bookings') }}">Bookings</a></li>
+    <li><a href="{{ url_for('show_bookings') }}">My Bookings</a></li>
     <li><a href="{{ url_for('logout') }}">Log Out</a></li>
   {% else %}
     <li><a href="{{ url_for('login') }}">Log In</a></li>

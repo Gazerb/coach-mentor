@@ -97,7 +97,7 @@ def profile():
     # grab the session user's username from db
     current_user = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    
     if session["user"]:
         return render_template("profile.html", username=current_user)
 
