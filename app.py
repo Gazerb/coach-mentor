@@ -139,6 +139,12 @@ def make_a_booking():
     return render_template("make_a_booking.html")
 
 
+@app.route("/edit_booking", methods=["GET", "POST"])
+def edit_booking():
+    edit_booking = mongo.db.bookings.find_one({"_id": ObjectId()})
+    return render_template("edit_booking.html", edit_booking=edit_booking)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

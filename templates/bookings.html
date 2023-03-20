@@ -15,8 +15,8 @@
                   <p><strong>Email:</strong> {{ bookings.email }}</p>
                 </div>
                 <div class="card-action">
-                  <button class="button">Edit</button>
-                  <button class="cancel">Cancel</button>
+                  <a href="{{ url_for('edit_booking') }}" class="button">Edit</a>
+                  <a href="" class="cancel">Cancel</a>
                 </div>
               </div>
             </div>
