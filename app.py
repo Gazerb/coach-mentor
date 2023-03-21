@@ -164,7 +164,7 @@ def edit_booking(bookings_id):
 @app.route("/delete_booking/<bookings_id>")
 def delete_booking(bookings_id):
     mongo.db.bookings.delete_one({"_id": ObjectId(bookings_id)})
-    flash("Booking Successfully Deleted")
+    flash("Booking cancelled")
     return redirect(url_for("show_bookings"))
 
 
