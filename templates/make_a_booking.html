@@ -1,25 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
+<!-- Webpage header -->
 <h2 class="center-text padding">Make a booking</h2>
 <div class="row card-panel blue lighten-5">
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('make_a_booking') }}">
         <div class="row">
+            <!-- Area for users first name-->
             <div class="input-field col s6">
                 <input placeholder="First Name" id="first_name" name="first_name" type="text" class="validate" required>
                 <label for="first_name">First Name</label>
             </div>
+            <!-- Area for users last name-->
             <div class="input-field col s6">
                 <input placeholder="Last Name" id="last_name" name="last_name" type="text" class="validate" required>
                 <label for="last_name">Last Name</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for users email-->
             <div class="input-field col s12">
                 <input id="email" name="email" type="email" class="validate" required>
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for users contact-->
             <div class="input-field col s12">
                 <input placeholder="Contact Number" id="contact_number" name="contact_number" type="text"
                     class="validate" required>
@@ -27,20 +32,23 @@
             </div>
         </div>
         <div class="row">
+            <!-- Area for users team that they coach-->
             <div class="input-field col s12">
                 <input placeholder="Team" id="team" name="team" type="text" class="validate">
                 <label for="team">Team You Coach</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for user to select the date of their booking-->
             <div class="input-field col s12">
                 <input id="date" name="date" type="text" class="datepicker validate" required>
                 <label for="date">Choose your date</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for users to select the reason for there booking-->
             <div class="input-field col s12">
-                    <select id="booking_reason" name="booking_reason">
+                <select id="booking_reason" name="booking_reason">
                     <label for="booking_reason">Reason for booking</label>
                     <option value="" disabled selected>Choose the reason for your booking</option>
                     <option value="Training help">Help with Training</option>
@@ -50,13 +58,15 @@
             </div>
         </div>
         <div class="row">
+            <!-- Area for users to select the time of their booking-->
             <div class="input-field col s12">
                 <input id="time" name="time" type="text" class="timepicker validate" required>
                 <label for="date">Choose your start time</label>
             </div>
         </div>
-        <!-- register -->
+        <!-- Submit booking to DB -->
         <div class="row">
+            <!-- confirm booking button -->
             <button type="submit" class="col s12 btn-large button">
                 Book <i class="fas fa-calendar-days"></i>
             </button>

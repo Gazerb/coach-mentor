@@ -5,42 +5,53 @@
     <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_booking', bookings_id=bookings._id)}}">
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="First Name" id="first_name" name="first_name" value="{{ bookings.first_name }}" type="text" class="validate" required>
+                <!-- Area for users first name, Which is prepoulated from data given when booking was made originally-->
+                <input placeholder="First Name" id="first_name" name="first_name" value="{{ bookings.first_name }}"
+                    type="text" class="validate" required>
                 <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-                <input placeholder="Last Name" id="last_name" name="last_name" value="{{ bookings.last_name }}" type="text" class="validate" required>
+                <!-- Area for users last name, Which is prepoulated from data given when booking was made originally-->
+                <input placeholder="Last Name" id="last_name" name="last_name" value="{{ bookings.last_name }}"
+                    type="text" class="validate" required>
                 <label for="last_name">Last Name</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for users email, Which is prepoulated from data given when booking was made originally-->
             <div class="input-field col s12">
                 <input id="email" name="email" value="{{ bookings.email }}" type="email" class="validate" required>
                 <label for="email">Email</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for users contact number, Which is prepoulated from data given when booking was made originally-->
             <div class="input-field col s12">
-                <input placeholder="Contact Number" id="contact_number" name="contact_number" value="{{ bookings.contact_number }}" type="text"
-                    class="validate" required>
+                <input placeholder="Contact Number" id="contact_number" name="contact_number"
+                    value="{{ bookings.contact_number }}" type="text" class="validate" required>
                 <label for="contact_number">Contact Number</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for the team the user coaches, Which is prepoulated from data given when booking was made originally-->
             <div class="input-field col s12">
-                <input placeholder="Team" id="team" name="team" value="{{ bookings.team }}" type="text" class="validate">
+                <input placeholder="Team" id="team" name="team" value="{{ bookings.team }}" type="text"
+                    class="validate">
                 <label for="team">Team You Coach</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for date of booking, Which is prepoulated from data given when booking was made originally-->
             <div class="input-field col s12">
-                <input id="date" name="date" value="{{ bookings.date }}" type="text" class="datepicker validate" required>
+                <input id="date" name="date" value="{{ bookings.date }}" type="text" class="datepicker validate"
+                    required>
                 <label for="date">Choose your date</label>
             </div>
         </div>
         <div class="row">
+            <!-- Area for reason of booking -->
             <div class="input-field col s12">
-                    <select id="booking_reason" name="booking_reason">
+                <select id="booking_reason" name="booking_reason">
                     <label for="booking_reason">Reason for booking</label>
                     <option value="" disabled selected>Choose the reason for your booking</option>
                     <option value="Training help">Help with Training</option>
@@ -50,13 +61,16 @@
             </div>
         </div>
         <div class="row">
+            <!-- Area for date of booking, Which is prepoulated from data given when booking was made originally-->
             <div class="input-field col s12">
-                <input id="time" name="time" value="{{ bookings.time }}" type="text" class="timepicker validate" required>
+                <input id="time" name="time" value="{{ bookings.time }}" type="text" class="timepicker validate"
+                    required>
                 <label for="date">Choose your start time</label>
             </div>
         </div>
-        <!-- register -->
+        <!-- Submit changes of booking to DB -->
         <div class="row">
+            <!-- Edit Booking button -->
             <button type="submit" class="button white-text">
                 Edit Booking <i class="fas fa-edit right"></i>
             </button>
