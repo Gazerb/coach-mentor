@@ -104,12 +104,6 @@ def profile():
     return redirect(url_for("login"))
 
 
-@app.route("/show_bookings")
-def show_bookings():
-    bookings = list(mongo.db.bookings.find({"created_by": session["user"]}))
-    return render_template("bookings.html", bookings=bookings)
-
-
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -139,6 +133,12 @@ def make_a_booking():
     return render_template("make_a_booking.html")
 
 
+@app.route("/show_bookings")
+def show_bookings():
+    bookings = list(mongo.db.bookings.find({"created_by": session["user"]}))
+    return render_template("bookings.html", bookings=bookings)
+
+
 @app.route("/edit_booking/<bookings_id>", methods=['GET', 'POST'])
 def edit_booking(bookings_id):
     if request.method == "POST":
@@ -162,25 +162,10 @@ def edit_booking(bookings_id):
 
 
 @app.route("/delete_booking/<bookings_id>")
-def delete_task(bookings_id):
-    if request.method == "POST":
-        submit = {
-            "first_name": request.form.get("first_name"),
-            "last_name": request.form.get("last_name"),
-            "email": request.form.get("email"),
-            "contact_number": request.form.get("contact_number"),
-            "team": request.form.get("team"),
-            "date": request.form.get("date"),
-            "time": request.form.get("time"),
-            "booking_reason": request.form.get("booking_reason"),
-            "created_by": session["user"]
-        }
-        mongo.db.bookings.remove({"_id": ObjectId(bookings_id)})
-        flash("Booking Successfully Deleted")
-        return redirect(url_for("show_bookings"))
-    
-    bookings = mongo.db.bookings.find_one({"_id": ObjectId(bookings_id)})
-    return render_template("delete_booking.html", bookings=bookings)
+def delete_booking(bookings_id):
+    mongo.db.bookings.delete_one({"_id": ObjectId(bookings_id)})
+    flash("Booking Successfully Deleted")
+    return redirect(url_for("show_bookings"))
 
 
 if __name__ == "__main__":
