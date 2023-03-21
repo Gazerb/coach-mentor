@@ -141,8 +141,46 @@ def make_a_booking():
 
 @app.route("/edit_booking/<bookings_id>", methods=['GET', 'POST'])
 def edit_booking(bookings_id):
+    if request.method == "POST":
+        submit = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "contact_number": request.form.get("contact_number"),
+            "team": request.form.get("team"),
+            "date": request.form.get("date"),
+            "time": request.form.get("time"),
+            "booking_reason": request.form.get("booking_reason"),
+            "created_by": session["user"]
+        }
+        mongo.db.bookings.replace_one({"_id": ObjectId(bookings_id)}, submit)
+        flash("Booking Updated")
+        return redirect(url_for("show_bookings"))
+
     bookings = mongo.db.bookings.find_one({"_id": ObjectId(bookings_id)})
     return render_template("edit_booking.html", bookings=bookings)
+
+
+@app.route("/delete_booking/<bookings_id>")
+def delete_task(bookings_id):
+    if request.method == "POST":
+        submit = {
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "contact_number": request.form.get("contact_number"),
+            "team": request.form.get("team"),
+            "date": request.form.get("date"),
+            "time": request.form.get("time"),
+            "booking_reason": request.form.get("booking_reason"),
+            "created_by": session["user"]
+        }
+        mongo.db.bookings.remove({"_id": ObjectId(bookings_id)})
+        flash("Booking Successfully Deleted")
+        return redirect(url_for("show_bookings"))
+    
+    bookings = mongo.db.bookings.find_one({"_id": ObjectId(bookings_id)})
+    return render_template("delete_booking.html", bookings=bookings)
 
 
 if __name__ == "__main__":

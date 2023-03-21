@@ -57,8 +57,11 @@
         </div>
         <!-- register -->
         <div class="row">
-            <a href="" class="button">Edit Booking</a>
-            <a href="{{ url_for('show_bookings')}}" class="cancel right">Cancel</a>
+            <button type="submit" class="button white-text">
+                Edit Booking <i class="fas fa-edit right"></i>
+            </button>
+            <a href="{{ url_for('show_bookings')}}" class="cancel right white-text">
+                Cancel <i class="fas fa-times-circle right"></i></a>
         </div>
     </form>
 </div>
