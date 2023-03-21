@@ -97,7 +97,7 @@ def profile():
     # grab the session user's username from db
     current_user = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    
     if session["user"]:
         return render_template("profile.html", username=current_user)
 
@@ -108,7 +108,6 @@ def profile():
 def show_bookings():
     bookings = list(mongo.db.bookings.find({"created_by": session["user"]}))
     return render_template("bookings.html", bookings=bookings)
-
 
 
 @app.route("/logout")
@@ -140,10 +139,10 @@ def make_a_booking():
     return render_template("make_a_booking.html")
 
 
-@app.route('/edit_booking/<booking_id>')
-def edit_booking(booking_id):
-    booking_change = mongo.db.bookings.find_one({'_id': booking_id})
-    return render_template("edit_booking.html", booking_id=booking_change)
+@app.route("/edit_booking/<bookings_id>", methods=['GET', 'POST'])
+def edit_booking(bookings_id):
+    bookings = mongo.db.bookings.find_one({"_id": ObjectId(bookings_id)})
+    return render_template("edit_booking.html", bookings=bookings)
 
 
 if __name__ == "__main__":
