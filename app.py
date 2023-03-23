@@ -106,7 +106,7 @@ def profile():
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-   
+
     fname = mongo.db.users.find_one(
         {"username": session["user"]})["first_name"]
 
@@ -162,7 +162,7 @@ def edit_profile():
 
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     fname = mongo.db.users.find_one(
         {"username": session["user"]})["first_name"]
 
@@ -177,7 +177,7 @@ def edit_profile():
 
     team = mongo.db.users.find_one(
         {"username": session["user"]})["team"]
-        
+
     return render_template("edit_profile.html",
                            username=username,
                            fname=fname,
@@ -185,6 +185,45 @@ def edit_profile():
                            email=email,
                            contact=contact,
                            team=team)
+
+
+@app.route("/delete", methods=['GET', 'POST'])
+def delete():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    fname = mongo.db.users.find_one(
+        {"username": session["user"]})["first_name"]
+
+    lname = mongo.db.users.find_one(
+        {"username": session["user"]})["last_name"]
+
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+
+    contact = mongo.db.users.find_one(
+        {"username": session["user"]})["contact_number"]
+
+    team = mongo.db.users.find_one(
+        {"username": session["user"]})["team"]
+
+    return render_template("delete_account.html",
+                           username=username,
+                           fname=fname,
+                           lname=lname,
+                           email=email,
+                           contact=contact,
+                           team=team)
+
+
+@app.route("/delete_account", methods=['GET', 'POST'])
+def delete_account():
+
+    session.pop("user")
+    mongo.db.users.delete_one({"username": session["user"]}, submit)
+    flash("Your profile has been deleted")
+    return redirect(url_for("index"))
+
 
 # Route to make a booking with the mentors
 
