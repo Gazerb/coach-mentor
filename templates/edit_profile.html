@@ -15,39 +15,44 @@
 						<label for="username">Username</label>
 					</div>
                 <div class="row">
+                    <!-- first name-->
                     <div class="input-field col s6">
                       <input placeholder="First Name" id="first_name" name="first_name" value="{{ fname }}" type="text" class="validate">
                       <label for="first_name">First Name</label>
                     </div>
                     <div class="input-field col s6">
+                      <!-- Last name -->
                       <input placeholder="Last Name" id="last_name" name="last_name" value="{{ lname }}" type="text" class="validate">
                       <label for="last_name">Last Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
+                      <!-- email-->
                       <input id="email" name="email" value="{{ email }}" type="email" class="validate">
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
+                      <!-- contact number-->
                       <input placeholder="Contact Number" id="contact_number" name="contact_number" value="{{ contact }}" type="text" class="validate">
                       <label for="contact_number">Contact Number</label>
                     </div>
                   </div>
                   <div class="row">
                     <div class="input-field col s12">
+                      <!-- team-->
                       <input placeholder="Team" id="team" name="team" value="{{ team }}" type="text" class="validate">
                       <label for="team">Team You Coach</label>
                     </div>
                   </div>
-                <!-- register -->
-                <div class="row">
+                <!-- update profile button-->
+                <div class="row center-align">
                     <button type="submit" class="button white-text">
                         Update Profile <i class="fas fa-sign-in-alt"></i>
                     </button>
-                    <!-- Cancel booking button -->
+                    <!-- Cancel profile changes button -->
             <a href="{{ url_for('profile')}}" class="cancel white-text right">Cancel <i
               class="fas fa-times-circle right"></i></a>
                 </div>

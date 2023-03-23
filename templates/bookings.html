@@ -16,12 +16,12 @@
         <p><strong>Contact Number:</strong> {{ bookings.contact_number }}</p>
         <p><strong>Email:</strong> {{ bookings.email }}</p>
       </div>
-      <div class="card-action">
+      <div class="card-action col s12 m12 center-align">
         <!-- Edit booking button -->
         <a href="{{ url_for('edit_booking', bookings_id=bookings._id)}}" class="button white-text">Edit <i
-            class="fas fa-edit right"></i></a>
+            class="fas fa-edit right center-align"></i></a>
         <!-- Cancel booking button -->
-        <a href="{{ url_for('delete_booking', bookings_id=bookings._id)}}" class="cancel white-text right">Cancel Booking <i
+        <a href="{{ url_for('delete_booking', bookings_id=bookings._id)}}" class="cancel white-text">Cancel Booking <i
             class="fas fa-times-circle right"></i></a>
       </div>
     </div>

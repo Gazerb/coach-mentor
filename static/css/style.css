@@ -1,19 +1,24 @@
+/* CSS for flash messages */
 .flashes h4 {
   line-height: 2;
 }
 
+/* CSS to center text */
 .center-text{
   text-align: center;
 }
 
+/* CSS for area padding */
 .padding{
   padding: 10px;
 }
 
+/* CSS for left padding only */
 .left {
   padding-left: 10px;
 }
 
+/* CSS for submit and edit buttons */
 .button {
   background-color: green;
   color: white;
@@ -29,6 +34,7 @@
   margin-bottom: 10px;
 }
 
+/* CSS for cancel and delete buttons */
 .cancel {
   background-color: red;
   color: white;
@@ -44,10 +50,12 @@
   margin-bottom: 10px;
 }
 
+/* CSS to align text to the right */
 .right{
   text-align: right;
 }
 
+/* CSS class to increase text size */
 .larger-text{
   font-size: large;
 }
