@@ -16,9 +16,8 @@
         </div>
         <div class="card-action">
             <!-- Edit booking button -->
-            <button type="submit" class="button white-text">
-                Update Profile <i class="fas fa-sign-in-alt"></i>
-            </button>
+            <a href="{{ url_for('delete_account')}}" class="button white-text">Yes, Delete my Account <i
+                class="fas fa-times-circle right"></i></a>
             <!-- Cancel booking button -->
             <a href="{{ url_for('profile')}}" class="cancel white-text right">Cancel <i
                 class="fas fa-times-circle right"></i></a>

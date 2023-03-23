@@ -219,10 +219,10 @@ def delete():
 @app.route("/delete_account", methods=['GET', 'POST'])
 def delete_account():
 
+    mongo.db.users.delete_one({"username": session["user"]})
     session.pop("user")
-    mongo.db.users.delete_one({"username": session["user"]}, submit)
     flash("Your profile has been deleted")
-    return redirect(url_for("index"))
+    return redirect(url_for("login"))
 
 
 # Route to make a booking with the mentors
