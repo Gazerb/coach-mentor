@@ -21,6 +21,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 # loads home page on start up
 
 
@@ -105,7 +106,7 @@ def profile():
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+   
     fname = mongo.db.users.find_one(
         {"username": session["user"]})["first_name"]
 
@@ -122,7 +123,13 @@ def profile():
         {"username": session["user"]})["team"]
 
     if session["user"]:
-        return render_template("profile.html", username=username, fname=fname, lname=lname, email=email, contact=contact, team=team)
+        return render_template("profile.html",
+                               username=username,
+                               fname=fname,
+                               lname=lname,
+                               email=email,
+                               contact=contact,
+                               team=team)
 
     return redirect(url_for("login"))
 
@@ -135,6 +142,49 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/edit_profile", methods=['GET', 'POST'])
+def edit_profile():
+    if request.method == "POST":
+        submit = {
+            "username": request.form.get("username"),
+            "first_name": request.form.get("first_name"),
+            "last_name": request.form.get("last_name"),
+            "email": request.form.get("email"),
+            "contact_number": request.form.get("contact_number"),
+            "team": request.form.get("team"),
+        }
+        # Replaces data of booking to match changes made by the user
+        mongo.db.users.replace_one({"username": session["user"]}, submit)
+        flash("Your profile has been updated")
+        return redirect(url_for("profile"))
+
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    
+    fname = mongo.db.users.find_one(
+        {"username": session["user"]})["first_name"]
+
+    lname = mongo.db.users.find_one(
+        {"username": session["user"]})["last_name"]
+
+    email = mongo.db.users.find_one(
+        {"username": session["user"]})["email"]
+
+    contact = mongo.db.users.find_one(
+        {"username": session["user"]})["contact_number"]
+
+    team = mongo.db.users.find_one(
+        {"username": session["user"]})["team"]
+        
+    return render_template("edit_profile.html",
+                           username=username,
+                           fname=fname,
+                           lname=lname,
+                           email=email,
+                           contact=contact,
+                           team=team)
 
 # Route to make a booking with the mentors
 

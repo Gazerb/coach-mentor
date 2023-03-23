@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Edit Your Profile</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('edit_profile', username=username) }}">
+            <div class="card-panel">
+                <!-- username -->
+                <div class="row">
+					<div class="input-field col s12">
+						<i class="fas fa-user prefix light-blue-text text-darken-4"></i>
+						<input id="username" name="username" value="{{ username }}" type="text" minlength="5"
+                        maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+						<label for="username">Username</label>
+					</div>
+                <div class="row">
+                    <div class="input-field col s6">
+                      <input placeholder="First Name" id="first_name" name="first_name" value="{{ fname }}" type="text" class="validate">
+                      <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                      <input placeholder="Last Name" id="last_name" name="last_name" value="{{ lname }}" type="text" class="validate">
+                      <label for="last_name">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input id="email" name="email" value="{{ email }}" type="email" class="validate">
+                      <label for="email">Email</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Contact Number" id="contact_number" name="contact_number" value="{{ contact }}" type="text" class="validate">
+                      <label for="contact_number">Contact Number</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input placeholder="Team" id="team" name="team" value="{{ team }}" type="text" class="validate">
+                      <label for="team">Team You Coach</label>
+                    </div>
+                  </div>
+                <!-- register -->
+                <div class="row">
+                    <button type="submit" class="button white-text">
+                        Update Profile <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                    <!-- Cancel booking button -->
+            <a href="{{ url_for('profile')}}" class="cancel white-text right">Cancel <i
+              class="fas fa-times-circle right"></i></a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
