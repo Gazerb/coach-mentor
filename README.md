@@ -159,6 +159,7 @@ I was advised by my mentor to change the buttons to have one on each side of the
     <li>Add feature so once booking is made then the mentors get an email of this booking with contact details</li>
     <li>Reviews area for the coaches to review their mentors</li>
     <li>User to receive email confirming booking</li>
+    <li>Hero image of a coaching session being delivered added to the index page</li>
 </ul>
 
 ## Technologies used
