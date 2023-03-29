@@ -92,7 +92,7 @@ Desktop:
 Tablet:
 <ul>
     <li><a href="documentation/wireframe/Tablet-Home-Page.png">Index Page</a></li>
-    <li><a href="documentation/wireframe/Tablet-Log-In.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Log-in.png">Log In Page</a></li>
     <li><a href="documentation/wireframe/Tablet-Make-a-Booking.png">Make a Booking Page</a></li>
     <li><a href="documentation/wireframe/Tablet-Mentors.png">Mentors Page</a></li>
     <li><a href="documentation/wireframe/Tablet-Profile.png">User Profile Page</a></li>
