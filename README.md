@@ -44,3 +44,37 @@ Buisness Owner:
     <li>Show users contact details for the club and coach mentors</li>
     <li>Provide other learning resources</li>
 </ul>
+
+
+## User Centered Design
+### 1. Strategy Plane
+The User Centered Design process started with the creation of the user stories and these influenced the design and layout of the product.
+
+
+### 2. Scope Plane
+A system so the club can allow its new coaches to book time with one of the experienced coach metors to help them with any issues or just to improve them as coaches.
+
+
+### 3. Structure Plane
+After idenifying the needs of the business owner and users that will use the new system the below was identified as required:
+<ul>
+    <li>Blue and White colour scheme to match the clubs current colours</li>
+    <li>Club contact details/li>
+    <li>Current club mentors</li>
+    <li>Booking form</li>
+    <li>User bookings page</li>
+    <li>Clear layout</li>
+    <li>easy navigation for the user</li>
+</ul>
+
+
+### 4. Skeleton Page
+To create the wireframes for the product I used <a href="https://www.figma.com/>">Figma</a>. They were created to appear as they would on a desktop, table and mobile.
+
+We have a header containing the logo and nav bar.
+
+To help the website with responsiveness of devices it was decided that when viewed on a tablet or mobile that the nav bar would be in a drop down hamberger menu.
+
+A footer is also included which contains the opening hours, address, contact number and socail media links.
+
+#### Wireframes
