@@ -105,7 +105,7 @@ Mobile:
     <li><a href="documentation/wireframe/Phone-home.png">Index Page</a></li>
     <li><a href="documentation/wireframe/Phone-log-In.png">Log In Page</a></li>
     <li><a href="documentation/wireframe/Phone-Make-a-Booking.png">Make a Booking Page</a></li>
-    <li><a href="documentation/wireframe/Phone-mentors.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Phone-mentors-page.png">Mentors Page</a></li>
     <li><a href="documentation/wireframe/Phone-User-bookings-Page.png">User Bookings Page</a></li>
     <li><a href="documentation/wireframe/Phone-User-Profile-Page.png">User Profile Page</a></li>
 </ul>
