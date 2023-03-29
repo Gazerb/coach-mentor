@@ -78,3 +78,34 @@ To help the website with responsiveness of devices it was decided that when view
 A footer is also included which contains the opening hours, address, contact number and socail media links.
 
 #### Wireframes
+Desktop:
+<ul>
+    <li><a href="documentation/wireframe/Desktop-Home-page.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Log-In.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-Mentors.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Desktop-User-bookings.png">User Bookings page</a></li>
+    <li><a href="documentation/wireframe/Desktop-User-Profile.png">User Profile Page</a></li>
+</ul>
+
+
+Tablet:
+<ul>
+    <li><a href="documentation/wireframe/Tablet-Home-Page.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Log-In.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Mentors.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-Profile.png">User Profile Page</a></li>
+    <li><a href="documentation/wireframe/Tablet-user-bookings-page.png">User Bookings Page</a></li>
+</ul>
+
+
+Mobile:
+<ul>
+    <li><a href="documentation/wireframe/Phone-home.png">Index Page</a></li>
+    <li><a href="documentation/wireframe/Phone-log-in.png">Log In Page</a></li>
+    <li><a href="documentation/wireframe/Phone-Make-a-Booking.png">Make a Booking Page</a></li>
+    <li><a href="documentation/wireframe/Phone-mentorss.png">Mentors Page</a></li>
+    <li><a href="documentation/wireframe/Phone-User-bookings-Page.png">User Bookings Page</a></li>
+    <li><a href="documentation/wireframe/Phone-User-Profile-Page.png">User Profile Page</a></li>
+</ul>
